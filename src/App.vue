@@ -205,6 +205,7 @@ if (localStorage.getItem('store') !== null) {
   store = JSON.parse(localStorage.getItem('store'))
 }
 export default Vue.extend({
+  name: 'Memos',
   data() {
     return {
       currentText: '',
