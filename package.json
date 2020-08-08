@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "parcel serve src/index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build src/index.html"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.0",
