@@ -27,19 +27,12 @@
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
           v-on:click="clear()"
         >
-          <p class="text-xl">
-            Clear All
-          </p>
+          <p class="text-xl">Clear All</p>
           <p class="font-normal">Ctrl + C</p>
         </button>
       </div>
       <article>
-        <section
-          class="rounded overflow-hidden shadow-lg"
-          v-if="memos.length === 0"
-        >
-          No List Items
-        </section>
+        <section class="rounded overflow-hidden shadow-lg" v-if="memos.length === 0">No List Items</section>
         <section
           class="rounded shadow-lg px-8 pt-6 pb-8"
           v-for="(p, index) in memos"
@@ -51,21 +44,15 @@
           <button
             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
             v-on:click="edit(index)"
-          >
-            Edit
-          </button>
+          >Edit</button>
           <button
             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ml-2"
             v-on:click="copy(index)"
-          >
-            Copy
-          </button>
+          >Copy</button>
           <button
             class="bg-gray-400 hover:bg-gray-300 text-black font-semi-bold px-2 border border-gray-400 rounded-full shadow ml-2"
             v-on:click="deleteItem(index)"
-          >
-            ×
-          </button>
+          >×</button>
         </section>
       </article>
     </main>
@@ -145,7 +132,7 @@ h1 {
   border-radius: 15px;
 }
 
-#memo-post input[type='text'] {
+#memo-post input[type="text"] {
   width: 100%;
 }
 
@@ -191,10 +178,6 @@ article section p {
   /* 改行コードを反映 */
   white-space: pre-wrap;
 }
-
-article section button {
-  padding: ;
-}
 </style>
 
 <script>
@@ -206,14 +189,14 @@ if (localStorage.getItem('store') !== null) {
 }
 export default Vue.extend({
   name: 'Memos',
-  data() {
+  data () {
     return {
       currentText: '',
       memos: store,
     }
   },
   methods: {
-    push(memo) {
+    push (memo) {
       if (this.currentText.trim() === '') {
         return
       }
@@ -221,7 +204,7 @@ export default Vue.extend({
       this.currentText = ''
       localStorage.setItem('store', JSON.stringify(this.memos))
     },
-    clear() {
+    clear () {
       if (this.memos.length !== 0) {
         if (confirm('Clear All Items?')) {
           this.memos = []
@@ -229,11 +212,11 @@ export default Vue.extend({
         }
       }
     },
-    deleteItem(index) {
+    deleteItem (index) {
       this.memos.splice(index, 1)
       localStorage.setItem('store', JSON.stringify(this.memos))
     },
-    copy(index) {
+    copy (index) {
       const copyText = this.memos[index]
       navigator.clipboard
         .writeText(copyText)
@@ -244,7 +227,7 @@ export default Vue.extend({
           console.error(e)
         })
     },
-    edit(index) {
+    edit (index) {
       this.currentText = this.memos[index]
       this.deleteItem(index)
     },
