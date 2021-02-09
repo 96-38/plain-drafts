@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-5xl font-semibold m-3">Memos</h1>
+    <h1 class="text-5xl font-semibold m-3">Plain Drafts</h1>
 
     <main id="app">
       <div id="memo-post">
@@ -69,7 +69,7 @@ body {
 /* 画面幅900px以下の場合に適用 */
 @media (max-width: 900px) {
   body {
-    padding: 0;
+    padding: 0
   }
 
   #memo-post {
