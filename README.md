@@ -20,9 +20,9 @@ Zoom, Slack, LINE, Discord, Twitter の DM 等、プラットフォームによ�
 [こちら](https://plain-drafts.netlify.app/)から実際の動作を確認できます。
 
 ## 使用した技術
-[Vue.js](https://github.com/vuejs/vue)
+- [Vue.js](https://github.com/vuejs/vue)
 
-[Tailwind CSS](https://github.com/tailwindlabs/tailwindcss)
+- [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss)
 
 
 ## ローカル環境での起動方法
