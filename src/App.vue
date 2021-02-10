@@ -224,7 +224,7 @@ export default Vue.extend({
       navigator.clipboard
         .writeText(copyText)
         .then(() => {
-          alert('copied text')
+          alert('copied to clipboard')
         })
         .catch((e) => {
           console.error(e)
