@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-5xl font-semibold m-3">Plain Drafts</h1>
+    <h1 class="text-4xl font-semibold m-3">Plain Drafts</h1>
 
     <main id="app">
       <div id="memo-post">
@@ -108,6 +108,9 @@ body {
     width: 100%;
     border-radius: 0.5rem;
     outline: 0px;
+  }
+  h1{
+    font-size: 28px;
   }
 }
 
