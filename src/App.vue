@@ -107,6 +107,74 @@ body {
   width: 2.5rem;
 }
 
+main {
+  background-color: #ffffff;
+}
+h1 {
+  text-align: center;
+}
+
+/* メモ投稿エリア */
+#memo-post {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1rem;
+  background-color: rgba(144, 185, 255, 0.235);
+  border-radius: 15px;
+}
+
+#memo-post input[type='text'] {
+  width: 100%;
+}
+
+button {
+  white-space: nowrap;
+}
+
+#add,
+#clear {
+  margin: 0.1rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+
+/* textareaにfocusした時のborderを非表示に */
+textarea {
+  outline: 0px;
+  width: 100%;
+}
+
+/* メモセクション */
+article section {
+  margin: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  padding: 1.5rem;
+
+  border: 1px solid #626dd2;
+  border-radius: 0.2rem;
+
+  box-sizing: border-box;
+}
+
+.memo {
+  width: 100%;
+}
+
+/* メモのテキスト */
+article section p {
+  margin: 0;
+  /* 改行コードを反映 */
+  white-space: pre-wrap;
+}
+
 /* 画面幅900px以下の場合に適用 */
 @media (max-width: 900px) {
   body {
@@ -116,11 +184,8 @@ body {
   #memo-post {
     position: sticky;
     top: 0;
-
-    display: block !important;
-
+    flex-direction: column;
     padding: 1rem;
-
     background-color: rgba(144, 185, 255, 0.235);
     border-radius: 15px;
   }
@@ -153,74 +218,6 @@ body {
   h1 {
     font-size: 28px;
   }
-}
-
-main {
-  background-color: #ffffff;
-}
-h1 {
-  text-align: center;
-}
-
-/* メモ投稿エリア */
-#memo-post {
-  position: sticky;
-  top: 0;
-
-  display: flex;
-  flex-flow: row nowrap;
-
-  padding: 1rem;
-
-  background-color: rgba(144, 185, 255, 0.235);
-  border-radius: 15px;
-}
-
-#memo-post input[type='text'] {
-  width: 100%;
-}
-
-button {
-  white-space: nowrap;
-  margin: 0.1rem;
-}
-
-article {
-  display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
-}
-
-/* textareaにfocusした時のborderを非表示に */
-textarea {
-  outline: 0px;
-  width: 100%;
-}
-
-/*　メモセクション */
-article section {
-  margin: 0.5rem;
-  padding: 1rem;
-
-  display: flex;
-  align-items: center;
-  flex-flow: row nowrap;
-
-  border: 1px solid #626dd2;
-  border-radius: 0.2rem;
-
-  box-sizing: border-box;
-}
-
-.memo {
-  width: 100%;
-}
-
-/* メモのテキスト */
-article section p {
-  margin: 0;
-  /* 改行コードを反映 */
-  white-space: pre-wrap;
 }
 </style>
 
