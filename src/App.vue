@@ -1,7 +1,13 @@
 <template>
   <div>
     <div class="logo">
-      <img src="icons/notebook.svg" alt="logo" srcset="" />
+      <a
+        href="https://github.com/96-38/plain-drafts"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><img class="github" src="icons/github.svg" alt="github" srcset=""
+      /></a>
+      <img class="icon" src="icons/notebook.svg" alt="logo" srcset="" />
       <h1 class="text-4xl font-semibold m-3">Plain Drafts</h1>
     </div>
 
@@ -79,12 +85,25 @@ body {
   padding: 0 20vw;
   background-color: #fff;
 }
+.github {
+  width: 1.6rem;
+  position: absolute;
+  right: 2.7rem;
+  bottom: 1.2rem;
+  transition: opacity 0.2s;
+}
+.github:hover {
+  opacity: 0.7;
+}
 
 .logo {
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.logo img {
+
+.icon {
   width: 2.5rem;
 }
 
