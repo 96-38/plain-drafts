@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h1 class="text-4xl font-semibold m-3">Plain Drafts</h1>
+    <div class="logo">
+      <img src="icons/notebook.svg" alt="logo" srcset="" />
+      <h1 class="text-4xl font-semibold m-3">Plain Drafts</h1>
+    </div>
 
     <main id="app">
       <div id="memo-post">
@@ -32,7 +35,12 @@
         </button>
       </div>
       <article>
-        <section class="rounded overflow-hidden shadow-lg" v-if="memos.length === 0">No List Items</section>
+        <section
+          class="rounded overflow-hidden shadow-lg"
+          v-if="memos.length === 0"
+        >
+          No List Items
+        </section>
         <section
           class="rounded shadow-lg px-8 pt-6 pb-8"
           v-for="(p, index) in memos"
@@ -44,15 +52,21 @@
           <button
             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
             v-on:click="edit(index)"
-          >Edit</button>
+          >
+            Edit
+          </button>
           <button
             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ml-2"
             v-on:click="copy(index)"
-          >Copy</button>
+          >
+            Copy
+          </button>
           <button
             class="bg-gray-400 hover:bg-gray-300 text-black font-semi-bold px-2 border border-gray-400 rounded-full shadow ml-2"
             v-on:click="deleteItem(index)"
-          >×</button>
+          >
+            ×
+          </button>
         </section>
       </article>
     </main>
@@ -66,10 +80,18 @@ body {
   background-color: #fff;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+}
+.logo img {
+  width: 2.5rem;
+}
+
 /* 画面幅900px以下の場合に適用 */
 @media (max-width: 900px) {
   body {
-    padding: 0
+    padding: 0;
   }
 
   #memo-post {
@@ -109,7 +131,7 @@ body {
     border-radius: 0.5rem;
     outline: 0px;
   }
-  h1{
+  h1 {
     font-size: 28px;
   }
 }
@@ -135,7 +157,7 @@ h1 {
   border-radius: 15px;
 }
 
-#memo-post input[type="text"] {
+#memo-post input[type='text'] {
   width: 100%;
 }
 
@@ -184,56 +206,56 @@ article section p {
 </style>
 
 <script>
-import Vue from 'vue'
+import Vue from 'vue';
 
-let store = []
+let store = [];
 if (localStorage.getItem('store') !== null) {
-  store = JSON.parse(localStorage.getItem('store'))
+  store = JSON.parse(localStorage.getItem('store'));
 }
 export default Vue.extend({
   name: 'Memos',
-  data () {
+  data() {
     return {
       currentText: '',
       memos: store,
-    }
+    };
   },
   methods: {
-    push (memo) {
+    push(memo) {
       if (this.currentText.trim() === '') {
-        return
+        return;
       }
-      this.memos.unshift(memo)
-      this.currentText = ''
-      localStorage.setItem('store', JSON.stringify(this.memos))
+      this.memos.unshift(memo);
+      this.currentText = '';
+      localStorage.setItem('store', JSON.stringify(this.memos));
     },
-    clear () {
+    clear() {
       if (this.memos.length !== 0) {
         if (confirm('Clear All Items?')) {
-          this.memos = []
-          localStorage.removeItem('store')
+          this.memos = [];
+          localStorage.removeItem('store');
         }
       }
     },
-    deleteItem (index) {
-      this.memos.splice(index, 1)
-      localStorage.setItem('store', JSON.stringify(this.memos))
+    deleteItem(index) {
+      this.memos.splice(index, 1);
+      localStorage.setItem('store', JSON.stringify(this.memos));
     },
-    copy (index) {
-      const copyText = this.memos[index]
+    copy(index) {
+      const copyText = this.memos[index];
       navigator.clipboard
         .writeText(copyText)
         .then(() => {
-          alert('copied to clipboard')
+          alert('copied to clipboard');
         })
         .catch((e) => {
-          console.error(e)
-        })
+          console.error(e);
+        });
     },
-    edit (index) {
-      this.currentText = this.memos[index]
-      this.deleteItem(index)
+    edit(index) {
+      this.currentText = this.memos[index];
+      this.deleteItem(index);
     },
   },
-})
+});
 </script>
