@@ -17,7 +17,7 @@
 Zoom, Slack, LINE, Discord, Twitter の DM 等、プラットフォームによってテキスト入力中の Enter キーの挙動が異なり (送信 / 改行) 入力中のテキストを誤って送信してしまうことがよくありました。そこで、不要なメタデータを含まない書き捨てのテキストデータを Web ブラウザ上で作成・管理できれば便利だと考え、Vue.js の学習も兼ねて制作しました。
 
 ## デモ
-[こちら](https://plain-drafts.netlify.app/)から実際の動作を確認できます。
+[こちら](https://plain-drafts.9638.dev/)から実際の動作を確認できます。
 
 ## 使用した技術
 - [Vue.js](https://github.com/vuejs/vue)
